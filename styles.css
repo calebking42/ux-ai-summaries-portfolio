@@ -67,6 +67,65 @@ a:hover { text-decoration-thickness: 2px; }
   border: 0;
 }
 
+/* ---------- Skip link ---------- */
+.skip-link {
+  position: absolute;
+  top: -100px;
+  left: 1rem;
+  z-index: 20;
+  background: var(--accent);
+  color: #fff;
+  padding: 0.6rem 1rem;
+  border-radius: 0 0 8px 8px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.skip-link:focus-visible {
+  top: 0;
+  outline-offset: 0;
+}
+
+/* ---------- Sticky nav ---------- */
+.site-nav {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: color-mix(in srgb, var(--bg) 85%, transparent);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--border);
+}
+
+.nav-inner {
+  display: flex;
+  gap: 0.25rem;
+  overflow-x: auto;
+  padding-top: 0.4rem;
+  padding-bottom: 0.4rem;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+
+.nav-inner::-webkit-scrollbar { display: none; }
+
+.nav-inner a {
+  flex-shrink: 0;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-decoration: none;
+  padding: 0.35rem 0.7rem;
+  border-radius: 999px;
+}
+
+.nav-inner a:hover {
+  color: var(--accent);
+  background: var(--accent-soft);
+}
+
+section[id] { scroll-margin-top: 3.5rem; }
+
 /* ---------- Hero ---------- */
 .hero {
   background: linear-gradient(160deg, var(--accent-soft), var(--bg) 70%);
@@ -126,7 +185,16 @@ a:hover { text-decoration-thickness: 2px; }
 }
 
 @media (min-width: 640px) {
-  .setup-grid { grid-template-columns: repeat(3, 1fr); }
+  .setup-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+.framework-callout {
+  margin: 1.25rem 0 0;
+  padding: 0.75rem 1.1rem;
+  background: var(--accent-soft);
+  border-left: 4px solid var(--accent);
+  border-radius: 8px;
+  font-size: 0.92rem;
 }
 
 .setup-card {
@@ -149,21 +217,88 @@ a:hover { text-decoration-thickness: 2px; }
 
 .tasks-heading { margin: 2.25rem 0 0.75rem; font-size: 1.05rem; }
 
-.task-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-}
-
-.task-list li {
+/* ---------- Results table ---------- */
+.results-table {
+  width: 100%;
+  border-collapse: collapse;
   background: var(--surface);
   border: 1px solid var(--border);
-  border-radius: 999px;
-  padding: 0.35rem 0.9rem;
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
   font-size: 0.9rem;
+}
+
+.results-table th,
+.results-table td {
+  padding: 0.7rem 0.85rem;
+  text-align: left;
+  vertical-align: top;
+}
+
+.results-table thead th {
+  background: var(--bg-alt);
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-muted);
+}
+
+.results-table tbody tr + tr td { border-top: 1px solid var(--border); }
+
+/* Stacked cards on mobile */
+@media (max-width: 639px) {
+  .results-table thead { display: none; }
+
+  .results-table,
+  .results-table tbody,
+  .results-table tr,
+  .results-table td {
+    display: block;
+    width: 100%;
+  }
+
+  .results-table {
+    background: none;
+    border: 0;
+    box-shadow: none;
+  }
+
+  .results-table tr {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    margin-bottom: 1rem;
+    padding: 0.5rem 0;
+  }
+
+  .results-table tbody tr + tr td { border-top: 0; }
+
+  .results-table td {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 0.4rem 1rem;
+  }
+
+  .results-table td::before {
+    content: attr(data-label);
+    font-weight: 700;
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--text-muted);
+    flex-shrink: 0;
+  }
+
+  .results-table td[data-label="Task as read aloud"] {
+    flex-direction: column;
+    gap: 0.15rem;
+    text-align: left;
+  }
+
+  .results-table td:not([data-label="Task as read aloud"]) { text-align: right; }
 }
 
 /* ---------- Chart ---------- */
@@ -350,6 +485,14 @@ a:hover { text-decoration-thickness: 2px; }
   font-size: 0.9rem;
   color: var(--text-muted);
   text-align: center;
+}
+
+.video-description {
+  text-align: center;
+  font-size: 0.92rem;
+  color: var(--text-muted);
+  max-width: 44em;
+  margin: 1rem auto 0;
 }
 
 .video-note {

@@ -4,10 +4,30 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="A pilot usability study on whether visible source links in Google AI summaries lead users to verify answers.">
+<meta property="og:title" content="AI Summaries in Google Search: Does Visibility Lead to Verification?">
+<meta property="og:description" content="A pilot usability study on whether visible source links in Google AI summaries lead users to verify answers.">
+<meta property="og:type" content="website">
 <title>AI Summaries in Google Search: Does Visibility Lead to Verification?</title>
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+
+<a class="skip-link" href="#main">Skip to content</a>
+
+<nav class="site-nav" aria-label="Section navigation">
+  <div class="container nav-inner">
+    <a href="#setup">Setup</a>
+    <a href="#results">Results</a>
+    <a href="#findings">Findings</a>
+    <a href="#video">Video</a>
+    <a href="#why">Why It Matters</a>
+    <a href="#limitations">Limitations</a>
+    <a href="#next">Next</a>
+    <a href="#take">My Take</a>
+    <a href="#references">References</a>
+  </div>
+</nav>
 
 <!-- 1. Hero -->
 <header class="hero">
@@ -21,14 +41,18 @@
   </div>
 </header>
 
-<main>
+<main id="main">
 
   <!-- 2. The setup -->
-  <section class="section" aria-labelledby="setup-heading">
+  <section class="section" id="setup" aria-labelledby="setup-heading">
     <div class="container">
       <h2 id="setup-heading">The Setup</h2>
       <p class="section-lede">An observation session plus a short interview with one participant.</p>
       <div class="setup-grid">
+        <div class="setup-card">
+          <h3>Method</h3>
+          <p>Observation plus a short follow-up interview.</p>
+        </div>
         <div class="setup-card">
           <h3>Who</h3>
           <p>"Participant A" — a frequent AI user, on an Apple device, using Google search.</p>
@@ -42,23 +66,80 @@
           <p>I confirmed beforehand that each query produced an accurate AI summary. He didn't know the topic of the study until afterward.</p>
         </div>
       </div>
-      <h3 class="tasks-heading">The six tasks</h3>
-      <ul class="task-list">
-        <li>Mount Rainier height</li>
-        <li>Creatine safety</li>
-        <li>Brain freeze</li>
-        <li>Roth vs. traditional IRA</li>
-        <li>Commuter parking pass cost</li>
-        <li>Great Wall visible from space</li>
-      </ul>
+      <p class="framework-callout"><strong>Framework:</strong> Nielsen's visibility of system status.</p>
+      <h3 class="tasks-heading" id="tasks-table-heading">The six tasks and results</h3>
+      <div class="table-wrap">
+        <table class="results-table" aria-labelledby="tasks-table-heading">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Task as read aloud</th>
+              <th scope="col">Type</th>
+              <th scope="col">Time (s)</th>
+              <th scope="col">Confidence (1&ndash;5)</th>
+              <th scope="col">Sources opened</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td data-label="#">1</td>
+              <td data-label="Task as read aloud">"Find out how tall Mount Rainier is."</td>
+              <td data-label="Type">Easy fact</td>
+              <td data-label="Time (s)">14</td>
+              <td data-label="Confidence (1–5)">5</td>
+              <td data-label="Sources opened">0</td>
+            </tr>
+            <tr>
+              <td data-label="#">2</td>
+              <td data-label="Task as read aloud">"Decide whether taking creatine daily is safe."</td>
+              <td data-label="Type">Health</td>
+              <td data-label="Time (s)">8</td>
+              <td data-label="Confidence (1–5)">5</td>
+              <td data-label="Sources opened">0</td>
+            </tr>
+            <tr>
+              <td data-label="#">3</td>
+              <td data-label="Task as read aloud">"Find out why we get brain freeze."</td>
+              <td data-label="Type">Explanation</td>
+              <td data-label="Time (s)">11</td>
+              <td data-label="Confidence (1–5)">5</td>
+              <td data-label="Sources opened">0</td>
+            </tr>
+            <tr>
+              <td data-label="#">4</td>
+              <td data-label="Task as read aloud">"Find the difference between a Roth IRA and a traditional IRA."</td>
+              <td data-label="Type">Money</td>
+              <td data-label="Time (s)">16</td>
+              <td data-label="Confidence (1–5)">5</td>
+              <td data-label="Sources opened">0</td>
+            </tr>
+            <tr>
+              <td data-label="#">5</td>
+              <td data-label="Task as read aloud">"Find out how much a commuter parking pass costs at Cal Poly."</td>
+              <td data-label="Type">Local detail</td>
+              <td data-label="Time (s)">28</td>
+              <td data-label="Confidence (1–5)">5</td>
+              <td data-label="Sources opened">0</td>
+            </tr>
+            <tr>
+              <td data-label="#">6</td>
+              <td data-label="Task as read aloud">"Find out whether you can see the Great Wall of China from space."</td>
+              <td data-label="Type">Common myth</td>
+              <td data-label="Time (s)">11</td>
+              <td data-label="Confidence (1–5)">5</td>
+              <td data-label="Sources opened">0</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </div>
   </section>
 
   <!-- 3. Results chart -->
-  <section class="section section-alt" aria-labelledby="results-heading">
+  <section class="section section-alt" id="results" aria-labelledby="results-heading">
     <div class="container">
       <h2 id="results-heading">Results: Seconds per Task</h2>
-      <p class="section-lede">Hover or tap a bar for details. The parking-pass task — highlighted — took nearly twice as long as any other.</p>
+      <p class="section-lede">Hover or tap a bar for details. The parking-pass task — highlighted — took about 1.75 times as long as the next slowest task.</p>
       <div class="chart-wrap">
         <div id="chart"
              role="img"
@@ -71,30 +152,18 @@
         <div class="stat"><span class="stat-num">12.5s</span><span class="stat-label">Median</span></div>
         <div class="stat"><span class="stat-num">28s</span><span class="stat-label">Longest (parking pass)</span></div>
       </div>
-      <table class="sr-only">
-        <caption>Time to answer per task, in seconds</caption>
-        <thead><tr><th scope="col">Task</th><th scope="col">Seconds</th></tr></thead>
-        <tbody>
-          <tr><td>Mount Rainier height</td><td>14</td></tr>
-          <tr><td>Creatine safety</td><td>8</td></tr>
-          <tr><td>Brain freeze</td><td>11</td></tr>
-          <tr><td>Roth vs. traditional IRA</td><td>16</td></tr>
-          <tr><td>Commuter parking pass cost</td><td>28</td></tr>
-          <tr><td>Great Wall visible from space</td><td>11</td></tr>
-        </tbody>
-      </table>
     </div>
   </section>
 
   <!-- 4. Key findings -->
-  <section class="section" aria-labelledby="findings-heading">
+  <section class="section" id="findings" aria-labelledby="findings-heading">
     <div class="container">
       <h2 id="findings-heading">Key Findings</h2>
       <p class="section-lede">Click a card to expand it.</p>
       <div class="findings-grid">
         <details class="finding">
           <summary><span class="finding-icon" aria-hidden="true">5/5</span> Maximum confidence, every time</summary>
-          <p>Confidence was 5 out of 5 on every task — no hesitation, no hedging, regardless of topic.</p>
+          <p>Confidence was 5 out of 5 on every task, including the health and money questions.</p>
         </details>
         <details class="finding">
           <summary><span class="finding-icon" aria-hidden="true">0</span> Zero sources opened</summary>
@@ -113,7 +182,7 @@
   </section>
 
   <!-- 5. Video -->
-  <section class="section section-alt" aria-labelledby="video-heading">
+  <section class="section section-alt" id="video" aria-labelledby="video-heading">
     <div class="container">
       <h2 id="video-heading">Watch It Happen</h2>
       <figure class="video-figure">
@@ -124,12 +193,13 @@
         </div>
         <figcaption>Participant A going straight to the AI summary.</figcaption>
       </figure>
+      <p class="video-description">The clip shows Participant A typing a search and reading the AI summary at the top of the results without opening any sources.</p>
       <p class="video-note">Screen recording only — no face or voice.</p>
     </div>
   </section>
 
   <!-- 6. Why it matters -->
-  <section class="section" aria-labelledby="why-heading">
+  <section class="section" id="why" aria-labelledby="why-heading">
     <div class="container">
       <h2 id="why-heading">Why It Matters</h2>
       <ul class="why-list">
@@ -154,7 +224,7 @@
   </section>
 
   <!-- 7. Limitations -->
-  <section class="section section-alt" aria-labelledby="limits-heading">
+  <section class="section section-alt" id="limitations" aria-labelledby="limits-heading">
     <div class="container">
       <h2 id="limits-heading">Limitations</h2>
       <ul class="limits-list">
@@ -165,8 +235,20 @@
     </div>
   </section>
 
+  <!-- What I'd test next -->
+  <section class="section" id="next" aria-labelledby="next-heading">
+    <div class="container">
+      <h2 id="next-heading">What I'd Test Next</h2>
+      <ul class="limits-list">
+        <li>A skeptical or low-AI user.</li>
+        <li>A task with real stakes.</li>
+        <li>A summary that is wrong.</li>
+      </ul>
+    </div>
+  </section>
+
   <!-- 8. My take -->
-  <section class="section" aria-labelledby="take-heading">
+  <section class="section section-alt" id="take" aria-labelledby="take-heading">
     <div class="container">
       <h2 id="take-heading">My Take</h2>
       <blockquote class="take">
@@ -176,11 +258,11 @@
   </section>
 
   <!-- 9. References -->
-  <section class="section section-alt" aria-labelledby="refs-heading">
+  <section class="section" id="references" aria-labelledby="refs-heading">
     <div class="container">
       <h2 id="refs-heading">References</h2>
       <ul class="refs">
-        <li>Anthropic. (2026). <em>Claude (Sonnet 5.5)</em> [Large language model]. <a href="https://claude.ai">https://claude.ai</a></li>
+        <li>Anthropic. (2026). <em>Claude</em> (Sonnet 5.5) [Large language model]. <a href="https://claude.ai">https://claude.ai</a></li>
         <li>Chapekis, A., &amp; Lieb, A. (2025, July 22). <em>Google users are less likely to click on links when an AI summary appears in the results.</em> Pew Research Center. <a href="https://www.pewresearch.org/short-reads/2025/07/22/google-users-are-less-likely-to-click-on-links-when-an-ai-summary-appears-in-the-results/">https://www.pewresearch.org/short-reads/2025/07/22/google-users-are-less-likely-to-click-on-links-when-an-ai-summary-appears-in-the-results/</a></li>
         <li>Knor, E. L., Reiss, M., M&ouml;ller, J., &amp; Merten, L. (2026). Determinants of verification behavior in generative search: Evidence from a conjoint experiment. <em>Computers in Human Behavior Reports, 22,</em> Article 101056. <a href="https://doi.org/10.1016/j.chbr.2026.101056">https://doi.org/10.1016/j.chbr.2026.101056</a></li>
         <li>Li, H., &amp; Aral, S. (2025). <em>Human trust in AI search: A large-scale experiment.</em> arXiv. <a href="https://arxiv.org/abs/2504.06435">https://arxiv.org/abs/2504.06435</a></li>
