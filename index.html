@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="A pilot usability study on whether visible source links in Google AI summaries lead users to verify answers.">
+<title>AI Summaries in Google Search: Does Visibility Lead to Verification?</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- 1. Hero -->
+<header class="hero">
+  <div class="container">
+    <p class="kicker">UX Pilot Study</p>
+    <h1>AI Summaries in Google Search:<br>Does Visibility Lead to Verification?</h1>
+    <p class="hook">Google now answers many searches before showing any links. Do people still check where the answers come from?</p>
+    <p class="byline">
+      By Caleb King &middot; GRC-4290 User Experience Research Methods &middot; Instructor: Hocheol Yang &middot; October 13, 2026
+    </p>
+  </div>
+</header>
+
+<main>
+
+  <!-- 2. The setup -->
+  <section class="section" aria-labelledby="setup-heading">
+    <div class="container">
+      <h2 id="setup-heading">The Setup</h2>
+      <p class="section-lede">An observation session plus a short interview with one participant.</p>
+      <div class="setup-grid">
+        <div class="setup-card">
+          <h3>Who</h3>
+          <p>"Participant A" — a frequent AI user, on an Apple device, using Google search.</p>
+        </div>
+        <div class="setup-card">
+          <h3>How</h3>
+          <p>Six tasks read aloud, one at a time. Each task was timed, and after each one he rated his confidence from 1&ndash;5.</p>
+        </div>
+        <div class="setup-card">
+          <h3>Controls</h3>
+          <p>I confirmed beforehand that each query produced an accurate AI summary. He didn't know the topic of the study until afterward.</p>
+        </div>
+      </div>
+      <h3 class="tasks-heading">The six tasks</h3>
+      <ul class="task-list">
+        <li>Mount Rainier height</li>
+        <li>Creatine safety</li>
+        <li>Brain freeze</li>
+        <li>Roth vs. traditional IRA</li>
+        <li>Commuter parking pass cost</li>
+        <li>Great Wall visible from space</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 3. Results chart -->
+  <section class="section section-alt" aria-labelledby="results-heading">
+    <div class="container">
+      <h2 id="results-heading">Results: Seconds per Task</h2>
+      <p class="section-lede">Hover or tap a bar for details. The parking-pass task — highlighted — took nearly twice as long as any other.</p>
+      <div class="chart-wrap">
+        <div id="chart"
+             role="img"
+             aria-label="Bar chart of time to answer in seconds per task. Mount Rainier 14 seconds, creatine 8, brain freeze 11, IRA 16, parking pass 28 (the longest, highlighted), Great Wall 11. Mean 14.7 seconds, median 12.5 seconds.">
+        </div>
+        <div id="chart-tooltip" class="chart-tooltip" role="status" aria-hidden="true"></div>
+      </div>
+      <div class="stats-row">
+        <div class="stat"><span class="stat-num">14.7s</span><span class="stat-label">Mean</span></div>
+        <div class="stat"><span class="stat-num">12.5s</span><span class="stat-label">Median</span></div>
+        <div class="stat"><span class="stat-num">28s</span><span class="stat-label">Longest (parking pass)</span></div>
+      </div>
+      <table class="sr-only">
+        <caption>Time to answer per task, in seconds</caption>
+        <thead><tr><th scope="col">Task</th><th scope="col">Seconds</th></tr></thead>
+        <tbody>
+          <tr><td>Mount Rainier height</td><td>14</td></tr>
+          <tr><td>Creatine safety</td><td>8</td></tr>
+          <tr><td>Brain freeze</td><td>11</td></tr>
+          <tr><td>Roth vs. traditional IRA</td><td>16</td></tr>
+          <tr><td>Commuter parking pass cost</td><td>28</td></tr>
+          <tr><td>Great Wall visible from space</td><td>11</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- 4. Key findings -->
+  <section class="section" aria-labelledby="findings-heading">
+    <div class="container">
+      <h2 id="findings-heading">Key Findings</h2>
+      <p class="section-lede">Click a card to expand it.</p>
+      <div class="findings-grid">
+        <details class="finding">
+          <summary><span class="finding-icon" aria-hidden="true">5/5</span> Maximum confidence, every time</summary>
+          <p>Confidence was 5 out of 5 on every task — no hesitation, no hedging, regardless of topic.</p>
+        </details>
+        <details class="finding">
+          <summary><span class="finding-icon" aria-hidden="true">0</span> Zero sources opened</summary>
+          <p>He never scrolled below the AI summary and opened zero sources across all six tasks.</p>
+        </details>
+        <details class="finding">
+          <summary><span class="finding-icon" aria-hidden="true">28s</span> The parking-pass stumble</summary>
+          <p>The parking-pass task took longest (28 seconds) because the summary gave two answers. He reported both instead of checking which one was correct.</p>
+        </details>
+        <details class="finding">
+          <summary><span class="finding-icon" aria-hidden="true">&#10003;</span> He likes it this way</summary>
+          <p>He said he preferred having the summary, and that if an answer were wrong he'd open the first source or two.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. Video -->
+  <section class="section section-alt" aria-labelledby="video-heading">
+    <div class="container">
+      <h2 id="video-heading">Watch It Happen</h2>
+      <figure class="video-figure">
+        <div id="video-slot">
+          <video id="session-video" controls preload="metadata" playsinline>
+            <source src="assets/participant-a-screen.mp4" type="video/mp4">
+          </video>
+        </div>
+        <figcaption>Participant A going straight to the AI summary.</figcaption>
+      </figure>
+      <p class="video-note">Screen recording only — no face or voice.</p>
+    </div>
+  </section>
+
+  <!-- 6. Why it matters -->
+  <section class="section" aria-labelledby="why-heading">
+    <div class="container">
+      <h2 id="why-heading">Why It Matters</h2>
+      <ul class="why-list">
+        <li>
+          <strong><a href="https://www.nngroup.com/articles/ten-usability-heuristics/">Nielsen (1994)</a>, visibility of system status:</strong>
+          interfaces should keep users informed, and clear communication builds trust. Source links were visible, but he never used them.
+        </li>
+        <li>
+          <strong><a href="https://www.pewresearch.org/short-reads/2025/07/22/google-users-are-less-likely-to-click-on-links-when-an-ai-summary-appears-in-the-results/">Pew Research (Chapekis &amp; Lieb, 2025)</a>:</strong>
+          people clicked a regular result link in 8% of visits with an AI summary vs. 15% without, and clicked a link inside the summary in only 1%.
+        </li>
+        <li>
+          <strong><a href="https://doi.org/10.1016/j.chbr.2026.101056">Knor et al. (2026)</a>:</strong>
+          verification prompts and cited sources did not make people more likely to verify; people mainly checked when they already doubted the answer.
+        </li>
+        <li>
+          <strong><a href="https://arxiv.org/abs/2504.06435">Li &amp; Aral (2025, preprint)</a>:</strong>
+          citations raised trust in AI answers even when incorrect.
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 7. Limitations -->
+  <section class="section section-alt" aria-labelledby="limits-heading">
+    <div class="container">
+      <h2 id="limits-heading">Limitations</h2>
+      <ul class="limits-list">
+        <li>One participant — and a heavy AI user at that.</li>
+        <li>Hypothetical tasks with no real stakes.</li>
+        <li>All summaries were accurate, so I couldn't observe a response to an error.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 8. My take -->
+  <section class="section" aria-labelledby="take-heading">
+    <div class="container">
+      <h2 id="take-heading">My Take</h2>
+      <blockquote class="take">
+        AI summaries make search faster and he valued that — but visible links alone didn't lead him to check anything. Google should do more to prompt verification on health and money topics, where a wrong answer costs the most.
+      </blockquote>
+    </div>
+  </section>
+
+  <!-- 9. References -->
+  <section class="section section-alt" aria-labelledby="refs-heading">
+    <div class="container">
+      <h2 id="refs-heading">References</h2>
+      <ul class="refs">
+        <li>Anthropic. (2026). <em>Claude (Sonnet 5.5)</em> [Large language model]. <a href="https://claude.ai">https://claude.ai</a></li>
+        <li>Chapekis, A., &amp; Lieb, A. (2025, July 22). <em>Google users are less likely to click on links when an AI summary appears in the results.</em> Pew Research Center. <a href="https://www.pewresearch.org/short-reads/2025/07/22/google-users-are-less-likely-to-click-on-links-when-an-ai-summary-appears-in-the-results/">https://www.pewresearch.org/short-reads/2025/07/22/google-users-are-less-likely-to-click-on-links-when-an-ai-summary-appears-in-the-results/</a></li>
+        <li>Knor, E. L., Reiss, M., M&ouml;ller, J., &amp; Merten, L. (2026). Determinants of verification behavior in generative search: Evidence from a conjoint experiment. <em>Computers in Human Behavior Reports, 22,</em> Article 101056. <a href="https://doi.org/10.1016/j.chbr.2026.101056">https://doi.org/10.1016/j.chbr.2026.101056</a></li>
+        <li>Li, H., &amp; Aral, S. (2025). <em>Human trust in AI search: A large-scale experiment.</em> arXiv. <a href="https://arxiv.org/abs/2504.06435">https://arxiv.org/abs/2504.06435</a></li>
+        <li>Nielsen, J. (1994, April 24). <em>10 usability heuristics for user interface design.</em> Nielsen Norman Group. <a href="https://www.nngroup.com/articles/ten-usability-heuristics/">https://www.nngroup.com/articles/ten-usability-heuristics/</a></li>
+      </ul>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <p>I used Claude (Anthropic, 2026) to help find sources and draft this project, based on my own pilot test data.</p>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
